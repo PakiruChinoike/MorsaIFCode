@@ -1,20 +1,21 @@
-import React from 'react';
-import '../static/style.css';
-import { handleFacebookLogin } from '../components/FacebookSSO';
-import { handleGoogleLogin } from '../components/GoogleSSO';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    return (
-        <div className="login-container">
-            <h2>Login</h2>
-            <button onClick={handleFacebookLogin} className="login-button facebook-button">
-                Login with Facebook
-            </button>
-            <button onClick={handleGoogleLogin} className="login-button google-button">
-                Login with Google
-            </button>
-        </div>
-    );
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    login();
+    navigate('/home'); 
+  };
+
+  return (
+    <div>
+      <h2>Login Page</h2>
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
 }
 
 export default Login;
