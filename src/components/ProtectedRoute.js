@@ -5,10 +5,10 @@ function ProtectedRoute({ element }) {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  if (!isAuthenticated) {
-    navigate('/login');
-    return null;
-  }
+  // if (!isAuthenticated) {
+  //   navigate('/login');
+  //   return null;
+  // }
 
   return element;
 }
