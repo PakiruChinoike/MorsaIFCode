@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const handleFacebookLogin = () => {
+export const handleFacebookLogin = () => {
     window.FB.login((response) => {
         if (response.authResponse) {
             console.log('Welcome! Fetching your information.... ');
@@ -32,8 +32,9 @@ const initFacebookSDK = () => {
     }(document, 'script', 'facebook-jssdk'));
 };
 
-useEffect(() => {
-    initFacebookSDK();
-}, []);
-
-export { handleGoogleLogin };
+export function FacebookSDKLoader() {
+    useEffect(() => {
+        initFacebookSDK();
+    }, []);
+    return null;
+}

@@ -2,7 +2,6 @@ import { GoogleLogin } from 'react-google-login';
 
 const handleGoogleLogin = (response) => {
     console.log('Google login response:', response);
-    // Handle the response from Google login here
 };
 
 const GoogleSSO = () => {
@@ -17,4 +16,4 @@ const GoogleSSO = () => {
     );
 };
 
-export { handleGoogleLogin };
+export default handleGoogleLogin;
