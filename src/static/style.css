@@ -20,6 +20,11 @@ body {
     margin-bottom: 20px;
 }
 
+.login-logo {
+    width: 120px;
+    height: 100px;
+}
+
 .login-button {
     width: 100%;
     padding: 10px;
