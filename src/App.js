@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './templates/Home';
 import Login from './templates/Login';
+import Perfil from './templates/Perfil';
+import CriarConta from './templates/CriarConta';
+import CriarPost from './templates/CriarPost';
+import Comunidade from './templates/Comunidade';
+import ChatComunidade from './templates/ChatComunidade';
+import Interesses from './templates/Interesses';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './components/AuthContext';
 
