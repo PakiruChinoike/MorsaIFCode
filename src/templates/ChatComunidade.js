@@ -8,13 +8,19 @@ function ChatComunidade(comunidadeId) {
         return response.data
     })
 
-    if (isLoading) return <div>Carregando mensagens...</div>
-    if (error) return <div>Erro carregando mensagens</div>
+    if (isLoading) return <div>Carregando conversa da comunidade...</div>
 
     return(
         <Model>
             <h1>{data.nome}</h1>
-                       
+            <ul>
+                {error ? 
+                    <div>Erro ao carregar mensagens</div> : 
+                    data.mensagens.map((mensagem) => (
+                        <li key={mensagem.id}>{mensagem.texto}</li>
+                    ))  
+                }  
+            </ul>
         </Model>
     )
 
