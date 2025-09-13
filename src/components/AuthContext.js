@@ -8,9 +8,17 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [usuarioLogado, setUsuarioLogado] = useState('user');
 
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
+  const login = (user) => {
+    setIsAuthenticated(true);
+    setUsuarioLogado(user)
+  }
+
+  const logout = () => {
+    setIsAuthenticated(false);
+    setUsuarioLogado(null)
+  }
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>

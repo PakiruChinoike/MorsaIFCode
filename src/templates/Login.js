@@ -3,13 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import '../static/style.css';
 import { handleFacebookLogin, FacebookSDKLoader } from '../components/FacebookSSO';
 import handleGoogleLogin from '../components/GoogleSSO';
+import { useState } from 'react';
+import axios from 'axios';
 
 function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [loginEmail, setLoginEmail] = useState("")
+  const [senha, setSenha] = useState("")
+  const [user, setUser] = useState("")
 
   const handleLogin = () => {
-    login();
+    axios.get('')
+        .then(response => {
+            console.log(response.data)
+            setUser(response.data)
+        })
+        .catch(error => {
+            console.error(error)
+        });
+
+    login(user);
     navigate('/home');
   };
 
